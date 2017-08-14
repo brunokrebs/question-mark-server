@@ -7,4 +7,17 @@ docker run --name questionmark-psql \
     -e POSTGRES_PASSWORD=mysecretpassword \
     -e POSTGRES_DB=questionmark \
     -d postgres
+    
+docker start questionmark-psql
+```
+
+```bash
+# issues a get request to exams endpoint
+curl http://localhost:8080/exams
+
+# add a new exam
+curl -X POST -H "Content-Type: application/json" -d '{
+    "title": "First exam",
+    "description": "Just a test" 
+}' http://localhost:8080/exams
 ```
