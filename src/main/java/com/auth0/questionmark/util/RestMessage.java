@@ -1,11 +1,24 @@
 package com.auth0.questionmark.util;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import java.util.List;
 
-@AllArgsConstructor
 public class RestMessage {
-
-    @Getter
     private String message;
+    private List<String> messages;
+
+    public RestMessage(List<String> messages) {
+        this.messages = messages;
+    }
+
+    public RestMessage(String message) {
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public List<String> getMessages() {
+        return messages;
+    }
 }

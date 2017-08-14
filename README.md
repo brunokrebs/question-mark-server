@@ -28,7 +28,12 @@ curl -X PUT -H "Content-Type: application/json" -d '{
 }' http://localhost:8080/exams/2
 
 curl -X PUT -H "Content-Type: application/json" -H "Accept-Language: pt-BR" -d '{
-    "title": "First exam!",
+    "title": "First exam!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!0",
+    "description": "Just testing edit feature" 
+}' http://localhost:8080/exams/1
+
+curl -X PUT -H "Content-Type: application/json" -d '{
+    "title": "First exam!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!0",
     "description": "Just testing edit feature" 
 }' http://localhost:8080/exams/1
 ```

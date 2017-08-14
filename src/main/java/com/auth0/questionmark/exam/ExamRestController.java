@@ -2,6 +2,7 @@ package com.auth0.questionmark.exam;
 
 import com.auth0.questionmark.exam.dto.ExamDTO;
 import com.auth0.questionmark.util.Check;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,9 +33,9 @@ public class ExamRestController {
     }
 
     @PutMapping(path = "/{id}")
-    public void editExam(@PathVariable long id, @RequestBody ExamDTO examDTO) {
+    public void editExam(@PathVariable long id, @Validated @RequestBody ExamDTO examDTO) {
         final Exam exam = examRepository.findOne(id);
-        Check.isNotNull(exam, "exam.error.notFound", id);
+        Check.isNotNull(exam, "Exception.exam.notFound", id);
         exam.update(examDTO);
         examRepository.save(exam);
     }
