@@ -1,5 +1,6 @@
 package com.auth0.questionmark.exam;
 
+import com.auth0.questionmark.exam.dto.ExamDTO;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -20,4 +21,9 @@ public class Exam {
 
     @NotNull
     private String description;
+
+    void update(ExamDTO examDTO) {
+        this.title = examDTO.getTitle();
+        this.description = examDTO.getDescription();
+    }
 }
